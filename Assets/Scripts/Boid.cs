@@ -139,7 +139,7 @@ public class Boid : MonoBehaviour
       }
       else if( (trigger = vis.GetInterface<ITrigger>()) != null )
       {
-        if( collider.bounds.Intersects(vis.bounds) )
+        if( GetComponent<Collider>().bounds.Intersects(vis.bounds) )
           trigger.OnTouch(this);
       }
       else //Obstacles processing
